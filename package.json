@@ -1,0 +1,11 @@
+{
+  "name": "blyx-workspace",
+  "private": true,
+  "scripts": {
+    "up": "node scripts/start-all.js",
+    "start": "npm --prefix frontend run start",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "test": "npm --prefix frontend run test"
+  }
+}

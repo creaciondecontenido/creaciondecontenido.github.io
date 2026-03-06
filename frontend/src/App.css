@@ -1,0 +1,146 @@
+.app-root {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+/* BlyxNova Studio - Portfolio Demo Styles */
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Social Profile Layout */
+.profile-section {
+  max-width: 935px;
+  margin: 0 auto;
+}
+
+/* Reels Strip Styling */
+.reels-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 16px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.reel-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  aspect-ratio: 9/16;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Post Grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.post-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Stats Animation */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Active Press Effect */
+.active-press:active {
+  transform: scale(0.95);
+}
+
+/* Gradient Overlay for Reels */
+.reel-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+}
+
+/* Profile Avatar Ring */
+.avatar-ring {
+  background: linear-gradient(45deg, #d946ef, #a855f7, #d946ef);
+  padding: 3px;
+  border-radius: 50%;
+}
+
+/* Case Study Card */
+.case-study-gradient {
+  background: linear-gradient(135deg, rgba(217, 70, 239, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+}
+
+/* BlyxNova Branding */
+.blyx-brand {
+  background: linear-gradient(to right, #d946ef, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Theme Toggle Animation */
+.theme-toggle-icon {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle-icon.rotate {
+  transform: rotate(360deg);
+}
+
+/* Smooth image loading */
+.img-loading {
+  background: linear-gradient(90deg, #27272a 0%, #3f3f46 50%, #27272a 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Follow Button Pulse */
+.follow-btn-pulse {
+  box-shadow: 0 0 0 0 rgba(217, 70, 239, 0.4);
+  animation: follow-pulse 2s infinite;
+}
+
+@keyframes follow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 70, 239, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(217, 70, 239, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 70, 239, 0);
+  }
+}
+
+/* Responsive Container */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 0 16px;
+  }
+}
