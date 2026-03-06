@@ -23,10 +23,12 @@ function App() {
   useEffect(() => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
+    if (!isDevelopment) {
+      return;
+    }
+
     if (!backendUrl) {
-      if (!isDevelopment) {
-        setApiWarning("REACT_APP_BACKEND_URL no está definido. La UI seguirá funcionando en modo local.");
-      }
+      setApiWarning("REACT_APP_BACKEND_URL no está definido. La UI seguirá funcionando en modo local.");
       return;
     }
 
@@ -41,14 +43,10 @@ function App() {
         });
 
         if (!response.ok) {
-          if (!isDevelopment) {
-            setApiWarning(`Backend no disponible (${response.status}). Mostrando UI con fallback local.`);
-          }
+          setApiWarning(`Backend no disponible (${response.status}). Mostrando UI con fallback local.`);
         }
       } catch {
-        if (!isDevelopment) {
-          setApiWarning("No se pudo conectar al backend (CORS/red/timeout). Mostrando UI con fallback local.");
-        }
+        setApiWarning("No se pudo conectar al backend (CORS/red/timeout). Mostrando UI con fallback local.");
       } finally {
         clearTimeout(timeoutId);
       }
